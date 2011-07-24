@@ -1,0 +1,28 @@
+--- 
+title  : Lime
+suite  : RubyWorks
+summary: Gherkin-style Test Framework
+authors:
+  - Thomas Sawyer <transfire@gmail.com>
+
+description:
+  Lime is a "Ruby DSL" knock-off of Cucumber's Gherkin
+  BDD nomenclature that runs on top of the ruby-test.
+
+resources:
+  home: http://rubyworks.github.com/lime
+  code: http://github.com/rubyworks/lime
+
+repositories:
+  origin: git://github.com/proutils/lime.git
+
+copyright: Copyright 2011 Thomas Sawyer
+license: BSD-2-Clause
+
+requirements:
+  - test
+  - ae
+  - detroit  (build)
+  - reap     (build)
+  - qed      (test)
+
