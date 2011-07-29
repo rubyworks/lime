@@ -7,20 +7,21 @@ authors:
 
 description:
   Lime is a "Ruby DSL" knock-off of Cucumber's Gherkin
-  BDD nomenclature that runs on top of the ruby-test.
+  BDD nomenclature that runs on top of ruby-test.
 
 resources:
   home: http://rubyworks.github.com/lime
   code: http://github.com/rubyworks/lime
+  mail: http://groups.google.com/group/rubyworks-mailinglist
 
 repositories:
-  origin: git://github.com/proutils/lime.git
+  upstream: git://github.com/proutils/lime.git
 
-copyright: Copyright 2011 Thomas Sawyer
-license: BSD-2-Clause
+copyrights:
+  - 2011 Thomas Sawyer (BSD-2-Clause)
 
 requirements:
-  - test
+  - ruby-test
   - ae
   - detroit  (build)
   - reap     (build)

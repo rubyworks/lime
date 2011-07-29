@@ -1,0 +1,10 @@
+#!mast .ruby .yaropts bin lib spec test [A-Z][A-Z]*
+.ruby
+lib/lime/advice.rb
+lib/lime/feature.rb
+lib/lime/scenario.rb
+lib/lime/step.rb
+lib/lime.rb
+PROFILE
+README.md
+VERSION
