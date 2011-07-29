@@ -11,7 +11,7 @@ replacements: []
 conflicts: []
 
 requirements: 
-- name: ruby-test
+- name: test
 - name: ae
 - name: detroit
   groups: 

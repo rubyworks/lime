@@ -21,7 +21,7 @@ copyrights:
   - 2011 Thomas Sawyer (BSD-2-Clause)
 
 requirements:
-  - ruby-test
+  - test
   - ae
   - detroit  (build)
   - reap     (build)
