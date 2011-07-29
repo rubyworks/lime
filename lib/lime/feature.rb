@@ -37,10 +37,12 @@ module Lime
       @story     = []
       @scenarios = []
 
-      # TODO: Don't really like this here, but how else to do it?
-      $TEST_SUITE << self
-
       @scope.extend DSL.new(self, &block)
+    end
+
+    # Convenience method for accessing advice, aka step definitions.
+    def [](key)
+      @advice[key]
     end
 
     # Iterate over each scenario.
@@ -60,13 +62,8 @@ module Lime
     end
 
     #
-    #def to_s
-    #  "#{type}: " + @label.to_s
-    #end
-
-    #
-    def to_s #description
-      (["Feature: #{label}"] + story).join("\n  ")
+    def to_s
+      (["#{label}"] + story).join("\n")
     end
 
     #
@@ -77,6 +74,14 @@ module Lime
     #
     def omit=(boolean)
       @omit = boolean
+    end
+
+    #
+    def update(mixin)
+      @advice[:given].concat mixin[:given] || []
+      @advice[:when].concat  mixin[:when]  || []
+      @advice[:then].concat  mixin[:then]  || []
+      @scope.extend mixin if Module === mixin
     end
 
     #
@@ -132,7 +137,7 @@ module Lime
       #   A brief description of the _given_ criteria.
       #
       def Given(description, &procedure)
-        @_feature.advice[:given][description] = procedure
+        @_feature[:given][description] = procedure
       end
       alias_method :given, :Given
 
@@ -142,7 +147,7 @@ module Lime
       #   A brief description of the _when_ criteria.
       #
       def When(description, &procedure)
-        @_feature.advice[:when][description] = procedure
+        @_feature[:when][description] = procedure
       end
       alias_method :wence, :When
 
@@ -152,9 +157,92 @@ module Lime
       #   A brief description of the _then_ criteria.
       #
       def Then(description, &procedure)
-        @_feature.advice[:then][description] = procedure
+        @_feature[:then][description] = procedure
       end
       alias_method :hence, :Then
+
+      #
+      def _feature
+        @_feature
+      end
+
+      #
+      def include(mixin)
+        if Featurable === mixin
+          @_feature.update(mixin)
+          super(mixin)
+        else
+          super(mixin)
+        end
+      end
+
+    end
+
+    # Convenience method for creating a feature mixin.
+    #
+    # @example
+    #
+    #   module MySteps
+    #     include Lime::Featurable
+    #     Given "customer's name is '(((\s+)))'" do |name|
+    #       @name = name
+    #     end
+    #   end
+    #
+    #   Feature do
+    #     include MySteps
+    #   end
+    #
+    module Featurable
+
+      def self.append_features(base)
+        base.extend(self)
+        base.module_eval %{
+          @_advice = Hash.new { |h,k| h[k]={} }
+        }
+      end
+
+      #
+      #def initialize(&code)
+      #  @_advice = Hash.new { |h,k| h[k]={} }
+      # 
+      #  module_eval(&code)
+      #end
+
+      # Given ...
+      #
+      # @param [String] description
+      #   A brief description of the _given_ criteria.
+      #
+      def Given(description, &procedure)
+        @_advice[:given][description] = procedure
+      end
+      alias_method :given, :Given
+
+      # When ...
+      #
+      # @param [String] description
+      #   A brief description of the _when_ criteria.
+      #
+      def When(description, &procedure)
+        @_advice[:when][description] = procedure
+      end
+      alias_method :wence, :When
+
+      # Then ...
+      #
+      # @param [String] description
+      #   A brief description of the _then_ criteria.
+      #
+      def Then(description, &procedure)
+        @_advice[:then][description] = procedure
+      end
+      alias_method :hence, :Then
+
+      # Access to internal feature instance.
+      def [](key)
+        @_advice[key]
+      end
 
     end
 

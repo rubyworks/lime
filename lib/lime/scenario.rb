@@ -51,8 +51,13 @@ module Lime
     end
 
     #
+    def type
+      "Scenario"
+    end
+
+    #
     def to_s
-      "Scenario: #{@label}"
+      @label.to_s
     end
 
     # FIXME
