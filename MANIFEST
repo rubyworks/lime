@@ -6,5 +6,7 @@ lib/lime/scenario.rb
 lib/lime/step.rb
 lib/lime.rb
 PROFILE
+LICENSE.txt
 README.md
 VERSION
+COPYING.rdoc
