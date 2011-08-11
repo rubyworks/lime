@@ -41,8 +41,8 @@ revision: 0
 title: Lime
 suite: RubyWorks
 summary: Gherkin-style Test Framework
-description: Lime is a "Ruby DSL" knock-off of Cucumber's Gherkin BDD nomenclature
-  that runs on top of ruby-test.
-version: 0.1.0
+description: Lime is a pure Ruby variation of Cucumber's Gherkin BDD test system that
+  runs on top of the Ruby Universal Test Harness.
+version: 0.2.0
 name: lime
 date: '2011-08-11'

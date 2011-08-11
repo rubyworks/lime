@@ -8,6 +8,7 @@ lib/lime/world.rb
 lib/lime.rb
 PROFILE
 LICENSE.txt
+HISTORY.md
 README.md
 VERSION
 COPYING.rdoc
