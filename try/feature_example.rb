@@ -1,4 +1,4 @@
-Test::Feature "Addition" do
+Feature "Addition" do
   To "avoid silly mistakes"
   As "a math idiot"
   We "need to calculate the sum of numbers"
@@ -25,7 +25,7 @@ Test::Feature "Addition" do
     @calculator = Calculator.new
   end
 
-  Given 'I have entered (((\d+))) into the calculator' do |n|
+  Given 'I have entered (\d+) into the calculator' do |n|
     @calculator.push n.to_i
   end
 
@@ -33,7 +33,7 @@ Test::Feature "Addition" do
     @result = @calculator.add
   end
 
-  Then 'the result should be (((\d+))) on the screen' do |n|
+  Then 'the result should be (\d+) on the screen' do |n|
     @result.assert == n.to_i
   end
 end
