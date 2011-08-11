@@ -6,8 +6,9 @@ authors:
   - Thomas Sawyer <transfire@gmail.com>
 
 description:
-  Lime is a "Ruby DSL" knock-off of Cucumber's Gherkin
-  BDD nomenclature that runs on top of ruby-test.
+  Lime is a pure Ruby variation of Cucumber's Gherkin
+  BDD test system that runs on top of the Ruby
+  Universal Test Harness.
 
 resources:
   home: http://rubyworks.github.com/lime
