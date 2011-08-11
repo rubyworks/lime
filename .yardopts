@@ -1,4 +1,4 @@
---output-dir site
+--output-dir doc
 --protected
 --readme README.md
 lib
