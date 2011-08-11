@@ -1,0 +1,159 @@
+<html>
+<head>
+  <title>Lime</title>
+  <link href="assets/styles/reset.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/styles/class.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/styles/site.css"  rel="stylesheet" type="text/css"/>
+  <link href="assets/images/lime.jpg" rel="shortcut icon"/>
+
+  <!-- syntax highlighing -->
+  <script src="http://rubyworks.github.com/assets/includes/shjs/sh_main.min.js"></script>
+  <script src="http://rubyworks.github.com/assets/includes/shjs/lang/sh_ruby.min.js"></script>
+  <script src="http://rubyworks.github.com/assets/includes/shjs/lang/sh_sh.min.js"></script>
+  <link  href="http://rubyworks.github.com/assets/includes/shjs/css/sh_acid.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="sh_highlightDocument();">
+
+<div id="forkme">
+  <a href="http://github.com/rubyworks/lime"><img src="assets/images/forkme.png" /></a>
+</div>
+
+<div id="header">
+<div class="page">
+  <img src="assets/images/cut-lime.png" height="200px" align="right" style="padding-top: 15px;"/>
+  <h1><img src="assets/images/title.png"/></h1>
+  <h2>Green Slices of Behavior</h2>
+</div>
+</div>
+
+<div id="main" class="bordered">
+<div class="page">
+
+  <div id="nav">
+    <!-- <a href="guide/doc.en/index.html">English Manual</a> &nbsp;&middot;&nbsp; -->
+    <a href="http://wiki.github.com/rubyworks/lime">Wiki</a> <br/>
+    <a href="http://rubydoc.info/gems/lime/frames">API</a> <br/>
+    <a href="http://googlegroups.com/group/rubyworks-mailinglist">Email</a> <br/>
+    <a href="http://github.com/rubyworks/lime/issues">Issue</a> <br/>
+    <a href="http://github.com/rubyworks/lime">Code</a>
+  </div>
+
+  <p>Lime is behavior-oriented test framework using a Gherkin-style
+  syntax for test construction. Unlike Cucumber, which is Lime's
+  clear inspiration, Lime is implemented purely in Ruby, not as 
+  a separate parse system and runs on top of the Ruby Universal Test
+  Harness, <a href="http://rubyworks.github.com/test">Ruby Test</a>.
+  </p>
+
+<!--
+  <p>Lime uses the <a href="http://rubyworks.github.com/ae">Assertive Expressive</a>
+  assertions framework. This is the same verstile framework used by <a href="http://rubyworks.github.com/qed">Q.E.D.</a>.
+  By default Lime test support the standard <code>#assert</code> and <code>#expect</code> assertion methods.
+  If you wish to use subjunctive terms, either <code>#should</code> or <code>#must</code>, you can load these
+  via a helper script (eg. <code>require 'ae/should'</code>).</p>
+-->
+
+</div>
+</div>
+
+<div>
+<div class="page">
+  <h3>Example</h3>
+
+  <p>To give you a taste of what a lime testcase looks like and example based on
+  the one given on Cucumber's homepage. We would write a Lime feature case along
+  the same lines:</p>
+
+<pre class="sh_ruby">
+  Feature "Addition" do
+    To "avoid silly mistakes"
+    As "a math idiot"
+    We "need to calculate the sum of numbers"
+
+    Scenario "Add two numbers" do
+      Given "I have a calculator"
+      Given "I have entered 50 into the calculator"
+      Given "I have entered 70 into the calculator"
+      When  "I press add"
+      Then  "the result should be 120 on the screen"
+    end
+
+    Scenario "Add three numbers" do
+      Given "I have a calculator"
+      Given "I have entered 50 into the calculator"
+      Given "I have entered 70 into the calculator"
+      Given "I have entered 90 into the calculator"
+      When  "I press add"
+      Then  "the result should be 210 on the screen"
+    end
+
+    Given 'I have a calculator' do
+      require 'calculator'
+      @calculator = Calculator.new
+    end
+
+    Given 'I have entered (\d+) into the calculator' do |n|
+      @calculator.push n.to_i
+    end
+
+    When 'I press add' do
+      @result = @calculator.add
+    end
+
+    Then 'the result should be (\d+) on the screen' do |n|
+      @result.assert == n.to_i
+    end
+  end
+</pre>
+
+  <p>A silly example to be sure, but one we can all easily understand.</p>
+
+</div>
+</div>
+
+<div id="footer" class="bordered">
+<div class="page">
+  <script type="text/javascript"><!--
+  google_ad_client = "ca-pub-1126154564663472";
+  /* RUBYWORKS 09-10-02 728x90 */
+  google_ad_slot = "0788888658";
+  google_ad_width = 728;
+  google_ad_height = 90;
+  //-->
+  </script>
+  <script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+
+  <br/><br/><br/>
+
+  <div class="copyright" width="100%">
+    <a href="http://rubyworks.github.com/">
+      <img src="assets/images/ruby-logo.png" height="110px" align="left" style="margin: 0 5px; padding: 0 10px" />
+    </a>
+    <a href="http://www.apache.org/licenses/LICENSE-2.0.html">
+      <img src="assets/images/opensource.png" height="120px" align="left" style="padding: 0 10px;" />
+    </a>
+    <a href="github.com/rubyworks/lime">
+      <img src="assets/images/github-logo.png" height="115px" align="left" style="margin: 0; padding: 0 10px;" />
+    </a>
+    <a href="http://testanything.org/wiki/index.php/Main_Page">
+      <img src="assets/images/tap.png" height="113px" align="left" style="margin: 0; padding: 0 20px;" />
+    </a>
+    <a href="">
+      <img src="assets/images/limes-are-good.png" height="117px" align="left" style="margin: 0; padding: 0 10px;" />
+    </a>
+  </div>
+
+  <br style="clear: both;" />
+
+  <div style="margin-top: 30px;">
+      <b>Lime</b>, Copyright &copy; 2009 Thomas Sawyer &middot;
+      <b>Contact:</b> transfire @ gmail.com
+  </div>
+</div>
+</div>
+
+</body>
+</html>
+
