@@ -14,8 +14,7 @@ module Lime
 
       @steps   = []
 
-      @scope = Scope.new(self)
-      @scope.module_eval(&block)
+      @scope = Scope.new(self, &block)
     end
 
     # Parent feature.
@@ -66,7 +65,9 @@ module Lime
     def topic
     end
 
+    #
     # Run a step in the context of this scenario.
+    #
     def run(step)
       type = step.type
       desc = step.label
@@ -82,6 +83,7 @@ module Lime
     #  features.clauses[@type].find{ |c| c =~ @description }
     #end
 
+    #
     # Convert matching string into a regular expression. If the string
     # contains parentheticals, e.g. `(.*?)`, the text within them is
     # treated as a case-insensitve back-referenceing regular expression
@@ -89,6 +91,7 @@ module Lime
     #
     # To use a regular expression, but leave the resulting match out of
     # the backreferences use `?:`, e.g. `(?:\d+)`.
+    #
     def match_regexp(str)
       ## the old way required double and triple parens
       #str = str.split(/(\(\(.*?\)\))(?!\))/).map{ |x|
@@ -102,15 +105,17 @@ module Lime
     end
 
     # TODO: Need to ensure the correct order of Given, When, Then.
+
+    #
     class Scope < Module
 
       #
-      def initialize(scenario) #, &code)
+      def initialize(scenario, &block)
         @scenario = scenario
 
-        extend(scenario.feature.scope)
+        #include(scenario.feature.scope)
 
-        #module_eval(&code)
+        module_eval(&block)
       end
 
       # Given ...
