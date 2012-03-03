@@ -1,12 +1,27 @@
-= COPYRIGHT NOTICES
+= COPYRIGHT
 
-== Lime Test Framework
+== NOTICES
+
+=== Lime
 
 Copyright:: (c) 2011 Thomas Sawyer, RubyWorks
 License:: BSD-2-Clause
 Website:: http://rubyworks.github.com/ruby-test
 
     Copyright 2011 Thomas Sawyer. All rights reserved.
+
+=== Gherkin
+
+Copyright:: (c) 2009-2011 Mike Sassak, Gregory Hnatiuk, Aslak Hellesøy
+License:: MIT
+Website:: https://github.com/cucumber/gherkin
+
+    Copyright (c) 2009-2011 Mike Sassak, Gregory Hnatiuk, Aslak Hellesøy
+
+
+== LICENSES
+
+=== BSD-2-Clause
 
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
@@ -30,13 +45,7 @@ Website:: http://rubyworks.github.com/ruby-test
     EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-== Gherkin
-
-Copyright:: (c) 2009-2011 Mike Sassak, Gregory Hnatiuk, Aslak Hellesøy
-License:: MIT
-Website:: https://github.com/cucumber/gherkin
-
-    Copyright (c) 2009-2011 Mike Sassak, Gregory Hnatiuk, Aslak Hellesøy
+== MIT
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
