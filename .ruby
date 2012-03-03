@@ -1,16 +1,15 @@
 ---
+source:
+- meta
 authors:
-- name: Thomas Sawyer
+- name: Trans
   email: transfire@gmail.com
 copyrights:
-- holder: Thomas Sawyer
+- holder: Rubyworks
   year: '2011'
   license: BSD-2-Clause
-replacements: []
-conflicts: []
 requirements:
-- name: test
-- name: ae
+- name: rubytest
 - name: detroit
   groups:
   - build
@@ -23,7 +22,13 @@ requirements:
   groups:
   - test
   development: true
+- name: ae
+  groups:
+  - test
+  development: true
 dependencies: []
+alternatives: []
+conflicts: []
 repositories:
 - uri: git://github.com/proutils/lime.git
   scm: git
@@ -31,18 +36,19 @@ repositories:
 resources:
   home: http://rubyworks.github.com/lime
   code: http://github.com/rubyworks/lime
-  mail: http://groups.google.com/group/rubyworks-mailinglist
+  bugs: http://github.com/rubyworks/lime/issues
+  mail: http://groups.google.com/groups/rubyworks-mailinglist
+extra: {}
 load_path:
 - lib
-extra:
-  manifest: MANIFEST
-alternatives: []
 revision: 0
+created: '2011-08-11'
+summary: Pure Ruby Gherkin-style Test Framework
 title: Lime
-suite: RubyWorks
-summary: Gherkin-style Test Framework
-description: Lime is a pure Ruby variation of Cucumber's Gherkin BDD test system that
-  runs on top of the Ruby Universal Test Harness.
-version: 0.2.0
+version: 0.3.0
 name: lime
-date: '2011-08-11'
+description: ! 'Lime is a pure Ruby variation of Cucumber''s Gherkin BDD test system
+
+  that runs on top of RubyTest, a Universal Test Harness for Ruby.'
+organization: Rubyworks
+date: '2012-03-03'

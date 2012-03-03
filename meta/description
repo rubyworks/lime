@@ -1,0 +1,2 @@
+Lime is a pure Ruby variation of Cucumber's Gherkin BDD test system
+that runs on top of RubyTest, a Universal Test Harness for Ruby.
