@@ -7,7 +7,7 @@ Copyright:: (c) 2011 Thomas Sawyer, Rubyworks
 
 ## Description
 
-Lime is pure Ruby Gherkin-style test framework.
+Lime is pure-Ruby Gherkin-style test framework.
 
 
 ## Example
@@ -57,7 +57,7 @@ end
 
 ## Copyrights
 
-Copyright (c) 2011 Thomas Sawyer, Rubyworks
+Copyright (c) 2011 Rubyworks
 
 Lime is distributed according to the terms of the *FreeBSD* license.
 

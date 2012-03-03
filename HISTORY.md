@@ -1,5 +1,17 @@
 # Release History
 
+## 0.3.0 / 2012-03-03
+
+Fix execution scope so that method definitions in Featurettes
+are visible to advice procedures. Also will automatically require
+any `*.rb` files in `featurettes` directory relative to feature
+file.
+
+Changes:
+
+* Fix execution scope so that featurettes are included.
+* Automatically require featurette files.
+
 
 ## 0.2.0 / 2011-08-11
 

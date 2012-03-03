@@ -2,13 +2,12 @@
 .ruby
 lib/lime/advice.rb
 lib/lime/feature.rb
+lib/lime/featurette.rb
 lib/lime/scenario.rb
 lib/lime/step.rb
 lib/lime/world.rb
 lib/lime.rb
-PROFILE
 LICENSE.txt
 HISTORY.md
 README.md
-VERSION
 COPYING.rdoc
