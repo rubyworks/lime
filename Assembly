@@ -1,38 +1,38 @@
 ---
 github:
-  active: true
+  gh_pages: web
 
 gem:
   active: true
 
 dnote:
+  title: Source Notes
+  output: log/notes.html
   labels: ~
-  output: log/NOTES.rdoc
 
 yard:
   yardopts: true
 
-qed:
-  files    : ~
-  #exclude : ~
-  #loadpath: ~
-  #requires: ~
-  #live    : false   
-  active   : false
+#qed:
+#  files    : ~
+#  #exclude : ~
+#  #loadpath: ~
+#  #requires: ~
+#  #live    : false   
+#  active   : false
 
-qedoc:
-  files : spec/
-  output: QED.rdoc
-  active: false
+#qedoc:
+#  files : spec/
+#  output: QED.rdoc
+#  active: false
 
 vclog:
-  output: log/ChangeLog.rdoc
+  output:
+    - log/changes.html
+    - log/history.html
   active: false
 
 email:
-  service: Email
-  file   : ~
-  subject: ~
   mailto : 
     - ruby-talk@ruby-lang.org
     - rubyworks-mailinglist@googlegroups.com
