@@ -1,5 +1,6 @@
-#!mast .ruby .yaropts bin lib spec test [A-Z][A-Z]*
+#!mast .ruby .yardopts bin lib spec test [A-Z]*.*
 .ruby
+.yardopts
 lib/lime/advice.rb
 lib/lime/feature.rb
 lib/lime/featurette.rb
