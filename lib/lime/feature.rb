@@ -113,6 +113,9 @@ module Lime
 
       alias :we :We
 
+      alias :I  :We
+      alias :i  :I
+
       #
       # Define a Scenario.
       #
