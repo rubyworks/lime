@@ -11,6 +11,7 @@ Changes:
 
 * Fix execution scope so that featurettes are included.
 * Automatically require featurette files.
+* Alias #I to #We.
 
 
 ## 0.2.0 / 2011-08-11
